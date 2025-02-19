@@ -103,7 +103,56 @@ body {
 .nav-toggle {
     display: none;
 }
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+  
+.theme-toggle:hover {
+    transform: rotate(360deg);
+}
 
+.dark-mode {
+    background-color: #121212 !important; 
+    color: #FFFFFF !important;
+}
+.dark-mode .navbar,
+.dark-mode .hero,
+.dark-mode .main,
+.dark-mode .section,
+.dark-mode .footer,
+.dark-mode .container {
+    background-color: #121212 !important;
+    color: white !important;
+}
+.dark-mode .card,
+.dark-mode .box,
+.dark-mode .event-card {
+    background-color: #1E1E1E !important; 
+    color: white !important;
+    border: 1px solid #333 !important;
+    box-shadow: none !important;
+}
+
+.dark-mode .btn {
+    background: #333 !important;
+    color: white !important;
+    border: 1px solid #666 !important;
+}
+
+.dark-mode .nav-links a {
+    color: white !important;
+}
+
+.dark-mode * {
+    background-color: inherit !important;
+    color: inherit !important;
+}
 .hero {
     padding: 140px 0 80px;
     background: linear-gradient(135deg, #F5F7F0 0%, #E8ECD9 100%);
@@ -552,16 +601,3 @@ body {
     }
 }
 
-.theme-toggle {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 50%;
-    transition: transform 0.3s;
-}
-  
-.theme-toggle:hover {
-    transform: rotate(360deg);
-}

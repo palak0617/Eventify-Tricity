@@ -3,7 +3,7 @@ const darkModeToggle = document.getElementById('darkModeToggle');
 function updateDarkMode() {
     const isDarkMode = document.body.classList.contains('dark-mode');
     darkModeToggle.textContent = isDarkMode ? '☀️' : '🌙';
-    localStorage.setItem('darkMode', isDarkMode);
+    localStorage.setItem('darkMode', isDarkMode ? 'true' : 'false');
 }
 
 darkModeToggle.addEventListener('click', () => {
@@ -12,10 +12,11 @@ darkModeToggle.addEventListener('click', () => {
 });
 
 function init() {
-    if (localStorage.getItem('darkMode') === 'true') {
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode === 'true') {
         document.body.classList.add('dark-mode');
-        updateDarkMode();
     }
+    updateDarkMode();
 }
 
 init();
