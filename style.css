@@ -31,7 +31,6 @@ body {
     padding: 0 2rem;
 }
 
-/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -105,7 +104,6 @@ body {
     display: none;
 }
 
-/* Hero Section */
 .hero {
     padding: 140px 0 80px;
     background: linear-gradient(135deg, #F5F7F0 0%, #E8ECD9 100%);
@@ -209,7 +207,6 @@ body {
     font-size: 1.2rem;
 }
 
-/* Campuses Section */
 .campuses {
     padding: 100px 0;
 }
@@ -351,7 +348,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* Footer */
 .footer {
     background: var(--secondary);
     color: var(--white);
@@ -478,7 +474,6 @@ body {
     color: rgba(255, 255, 255, 0.6);
 }
 
-/* Responsive Design */
 @media (max-width: 992px) {
     .hero .container {
         grid-template-columns: 1fr;
@@ -555,4 +550,18 @@ body {
     .campus-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+  
+.theme-toggle:hover {
+    transform: rotate(360deg);
 }

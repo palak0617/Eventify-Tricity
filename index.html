@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="light-mode">
     <nav class="navbar">
         <div class="container">
             <a href="/" class="logo">
                 <img src="images/logo.jpg" alt="Eventify Tricity">
             </a>
             <div class="nav-toggle">
+                <br><br><br>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -24,6 +25,9 @@
                 <li><a href="events.html">Events</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact" class="cta-button">Contact</a></li>
+                <button id="darkModeToggle" class="theme-toggle">
+                    🌙
+                </button>
             </ul>
         </div>
     </nav>
@@ -34,7 +38,7 @@
                 <h1>Discover Amazing<br>Campus Events</h1>
                 <p>Your one-stop platform for all university events in Tricity</p>
                 <div class="hero-cta">
-                    <a href="#events" class="primary-button">Explore Events</a>
+                    <a href="events.html" class="primary-button">Explore Events</a>
                     <a href="#about" class="secondary-button">Learn More</a>
                 </div>
             </div>
@@ -106,7 +110,7 @@
                             <div class="card-stats">
                                 <div class="stat">
                                     <i class="fas fa-users"></i>
-                                    <span>12,000+ Students</span>
+                                    <span>22,000+ Students</span>
                                 </div>
                                 <div class="stat">
                                     <i class="fas fa-calendar"></i>
@@ -135,7 +139,7 @@
                             <div class="card-stats">
                                 <div class="stat">
                                     <i class="fas fa-users"></i>
-                                    <span>8,000+ Students</span>
+                                    <span>2,500+ Students</span>
                                 </div>
                                 <div class="stat">
                                     <i class="fas fa-calendar"></i>
@@ -174,6 +178,35 @@
                             <a href="https://maps.google.com/?q=Thapar+University+Patiala" class="location-link" target="_blank">
                                 <i class="fas fa-map-marker-alt"></i>
                                 Patiala, Punjab
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="campus-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="images/cu.jpg" alt="Thapar University">
+                            <div class="card-overlay">
+                                <h3>Chandigarh University</h3>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>Chandigarh University</h3>
+                            <p>Chandigarh University is a leading private university in Punjab, known for excellence in education and industry collaborations.</p>
+                            <div class="card-stats">
+                                <div class="stat">
+                                    <i class="fas fa-users"></i>
+                                    <span>30,000+ Students</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>35+ Events/Year</span>
+                                </div>
+                            </div>
+                            <a href="http://maps.google.com/?q=Chandigarh+University" class="location-link" target="_blank">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Chandigarh Area, Punjab
                             </a>
                         </div>
                     </div>
