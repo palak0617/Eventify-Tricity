@@ -1,4 +1,3 @@
-// Firebase Configuration
 const firebaseConfig = {
     apiKey: "AIzaSyBiucGvP-mJ_yWbZFfvU__g53iIBmC_xKo",
     authDomain: "eventify-tricity.firebaseapp.com",
@@ -9,10 +8,8 @@ const firebaseConfig = {
     appId: "1:464396529197:web:c605539fc7623b799112a4"
 };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-// Events Data
 const eventsData = {
     technical: [
         {
@@ -76,7 +73,6 @@ const eventsData = {
     ]
 };
 
-// Function to upload events data to Firebase
 async function uploadEventsData() {
     try {
         const eventsRef = firebase.database().ref('events');
@@ -87,5 +83,4 @@ async function uploadEventsData() {
     }
 }
 
-// Call the function to upload events data
 uploadEventsData();

@@ -39,11 +39,7 @@
         </div>
     </section>
 
-    <section class="events-container">
-        <div class="container" id="events-list">
-            <!-- Events will be dynamically loaded here -->
-        </div>
-    </section>
+    <div id="event-container"></div>
 
     <footer class="footer">
         <div class="container">
@@ -96,19 +92,18 @@
         </div>
     </footer>
 
-    <!-- Include Firebase compatibility library -->
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
     
     <script src="script.js"></script>
     <script src="dark.js"></script>
     <script src="event-data.js"></script>
+    <script src="events.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const university = 'Chandigarh University';
             document.getElementById('university-name').textContent = university + ' Events';
 
-            // Fetch and display events for the university
             fetchEventsForUniversity(university);
         });
 

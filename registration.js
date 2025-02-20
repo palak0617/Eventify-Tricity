@@ -1,4 +1,3 @@
-// DOM Elements
 const form = document.getElementById('registrationForm');
 const universitySelect = document.getElementById('university');
 const otherUniversityGroup = document.getElementById('otherUniversityGroup');
@@ -6,7 +5,6 @@ const otherUniversityInput = document.getElementById('otherUniversity');
 const toast = document.getElementById('toast');
 const successModal = document.getElementById('successModal');
 
-// Show toast message
 function showToast(message, type = 'success') {
     toast.textContent = message;
     toast.className = `toast ${type} show`;
@@ -16,7 +14,6 @@ function showToast(message, type = 'success') {
     }, 3000);
 }
 
-// Handle university selection
 universitySelect.addEventListener('change', () => {
     if (universitySelect.value === 'other') {
         otherUniversityGroup.style.display = 'block';
@@ -27,21 +24,17 @@ universitySelect.addEventListener('change', () => {
     }
 });
 
-// Show success modal with QR code
 function showSuccessModal() {
     successModal.className = 'modal show';
 }
 
-// Close modal
 function closeModal() {
     successModal.className = 'modal';
 }
 
-// Handle form submission
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // Get form data
     const formData = {
         fullName: document.getElementById('fullName').value,
         email: document.getElementById('email').value,
@@ -50,14 +43,13 @@ form.addEventListener('submit', (e) => {
         registrationDate: new Date().toISOString()
     };
 
-    // Store in localStorage
     try {
         const registrations = JSON.parse(localStorage.getItem('registrations') || '[]');
         registrations.push(formData);
         localStorage.setItem('registrations', JSON.stringify(registrations));
         
         showToast('Registration successful!');
-        showSuccessModal(); // Show the modal with QR code
+        showSuccessModal();
         form.reset();
     } catch (error) {
         showToast('Error saving registration. Please try again.', 'error');
@@ -65,7 +57,6 @@ form.addEventListener('submit', (e) => {
     }
 });
 
-// Close modal when clicking outside
 window.onclick = function(event) {
     if (event.target === successModal) {
         closeModal();

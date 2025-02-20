@@ -3,15 +3,13 @@ const firebaseConfig = {
     authDomain: "eventify-tricity.firebaseapp.com",
     databaseURL: "https://eventify-tricity-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "eventify-tricity",
-    storageBucket: "", // No Firebase Storage
+    storageBucket: "",
     messagingSenderId: "464396529197",
     appId: "1:464396529197:web:c605539fc7623b799112a4"
 };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-// Get Firebase services
 const auth = firebase.auth();
 const database = firebase.database();
 
@@ -60,14 +58,12 @@ const database = firebase.database();
 
   const storage = firebase.storage();
   
-  // DOM Elements
   const authTabs = document.querySelectorAll('.auth-tab');
   const authForms = document.querySelectorAll('.auth-form');
   const loginForm = document.getElementById('login-form');
   const signupForm = document.getElementById('signup-form');
   const togglePasswordButtons = document.querySelectorAll('.toggle-password');
   
-  // Toast notification function
   function showToast(message, type = 'success') {
       const toast = document.getElementById('toast');
       toast.textContent = message;
@@ -78,7 +74,6 @@ const database = firebase.database();
       }, 3000);
   }
   
-  // Toggle password visibility
   togglePasswordButtons.forEach(button => {
       button.addEventListener('click', () => {
           const input = button.parentElement.querySelector('input');
@@ -94,16 +89,13 @@ const database = firebase.database();
       });
   });
   
-  // Tab switching
   authTabs.forEach(tab => {
       tab.addEventListener('click', () => {
           const targetId = tab.dataset.tab;
           
-          // Update tabs
           authTabs.forEach(t => t.classList.remove('active'));
           tab.classList.add('active');
           
-          // Update forms
           authForms.forEach(form => {
               form.classList.remove('active');
               if (form.id === `${targetId}Form`) {
@@ -113,7 +105,6 @@ const database = firebase.database();
       });
   });
   
-  // Login Form Submit
   loginForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       
@@ -129,7 +120,6 @@ const database = firebase.database();
       }
   });
   
-  // Signup Form Submit
   signupForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       
@@ -147,11 +137,9 @@ const database = firebase.database();
       }
       
       try {
-          // Create user account
           const userCredential = await auth.createUserWithEmailAndPassword(email, password);
           const user = userCredential.user;
           
-          // Upload profile picture if provided
           let photoURL = '';
           if (photoFile) {
               const photoRef = storage.ref().child(`profile_pictures/${user.uid}`);
@@ -159,7 +147,6 @@ const database = firebase.database();
               photoURL = await photoRef.getDownloadURL();
           }
           
-          // Save user data
           await database.ref('users/' + user.uid).set({
               name: name,
               email: email,
@@ -177,7 +164,6 @@ const database = firebase.database();
       }
   });
   
-  // Check authentication state
   auth.onAuthStateChanged(user => {
       if (user && window.location.pathname.includes('user.html')) {
           window.location.href = 'dashboard.html';

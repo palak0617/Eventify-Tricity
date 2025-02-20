@@ -1,4 +1,21 @@
-// Firebase Configuration
+const eventData = [
+    {
+        "title": "Tech Fest 2025",
+        "date": "March 10, 2025",
+        "time": "10:00 AM",
+        "location": "Panjab University",
+        "description": "Join us for a day of innovation, coding, and networking!"
+    },
+    {
+        "title": "Cultural Night",
+        "date": "April 5, 2025",
+        "time": "7:00 PM",
+        "location": "Thapar University",
+        "description": "An evening filled with music, dance, and fun activities."
+    }
+];
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyBiucGvP-mJ_yWbZFfvU__g53iIBmC_xKo",
     authDomain: "eventify-tricity.firebaseapp.com",
@@ -9,10 +26,8 @@ const firebaseConfig = {
     appId: "1:464396529197:web:c605539fc7623b799112a4"
 };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-// Load events from Firebase
 async function loadEventsFromFirebase() {
     try {
         const eventsRef = firebase.database().ref('events');
@@ -32,13 +47,11 @@ async function loadEventsFromFirebase() {
     }
 }
 
-// Format date function
 function formatDate(dateString) {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateString).toLocaleDateString('en-US', options);
 }
 
-// Render events function
 function renderEvents(events) {
     const eventsList = document.getElementById('events-list');
     eventsList.innerHTML = events.map(event => `

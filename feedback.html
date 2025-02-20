@@ -220,18 +220,15 @@ function highlightStars(count) {
   });
 }
 
-// Handle form submission
 feedbackForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const feedback = document.getElementById('feedbackText').value;
   
-  // Here you would typically send the data to your backend
   console.log({
     rating: currentRating,
     feedback: feedback
   });
 
-  // Show thank you message
   feedbackForm.style.display = 'none';
   thankYou.style.display = 'block';
 });

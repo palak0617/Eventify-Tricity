@@ -315,7 +315,6 @@
             }
         }
 
-        // Initialize quizzes
         window.onload = () => {
             for (const [eventName, questions] of Object.entries(quizData)) {
                 new Quiz(eventName, questions).renderQuiz();
