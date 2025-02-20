@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitkara University Events - Eventify Tricity</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="light-mode">
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="images/logo.jpg" alt="Eventify Tricity">
+            </a>
+            <div class="nav-toggle">
+                <br><br><br>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="campus.html">Campus</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact" class="cta-button">Contact</a></li>
+                <li><a href="user.html">Login/Sign Up</a></li>
+                <button id="darkModeToggle" class="theme-toggle">🌙</button>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="events-hero">
+        <div class="container">
+            <h1 id="university-name">Chitkara University Events</h1>
+            <p class="hero-subtitle">Explore events across different categories</p>
+        </div>
+    </section>
+
+    <section class="events-container">
+        <div class="container" id="events-list">
+            <!-- Events will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Eventify Tricity</h3>
+                    <p>Connecting students with campus events across Tricity. Discover, participate, and make the most of your university experience.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#campus">Campus</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Universities</h4>
+                    <ul>
+                        <li><a href="#">Panjab University</a></li>
+                        <li><a href="#">Chitkara University</a></li>
+                        <li><a href="#">PEC University</a></li>
+                        <li><a href="#">Thapar University</a></li>
+                    </ul>
+                </div>
+
+                <div class="newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to stay updated with the latest campus events and opportunities.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Eventify Tricity. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Firebase compatibility library -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    
+    <script src="script.js"></script>
+    <script src="dark.js"></script>
+    <script src="event-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            const university = 'Chitkara University';
+            document.getElementById('university-name').textContent = university + ' Events';
+
+            // Fetch and display events for the university
+            const allEvents = await loadEventsFromFirebase();
+            const universityEvents = allEvents.filter(event => event.university === university);
+            renderEvents(universityEvents);
+        });
+    </script>
+</body>
+</html>

@@ -523,6 +523,25 @@ body {
     color: rgba(255, 255, 255, 0.6);
 }
 
+.events-link {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background: rgba(172, 195, 43, 0.1);
+    border-radius: 15px;
+    transition: var(--transition);
+}
+
+.events-link:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
 @media (max-width: 992px) {
     .hero .container {
         grid-template-columns: 1fr;
