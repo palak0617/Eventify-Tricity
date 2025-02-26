@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+    <html lang = "en">
+        <head>
+            <meta charset = "UTF-8">
+            <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+            <title> User Authentication - Eventify Tricity </title>
+            <link rel = "stylesheet" href = "../src/styles/style.css">
+            <link rel = "stylesheet" href = "../src/styles/user.css">
+            <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        </head>
+
+        <body class = "light-mode">
+            <nav class = "navbar">
+                <div class = "container">
+                    <a href = "/" class = "logo">
+                        <img src = "../src/assets/images/logo.jpg" alt = "Eventify Tricity">
+                    </a>
+                    <div class = "nav-toggle">
+                        <br><br><br>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class = "nav-links">
+                        <li><a href = "index.html"> Home </a></li>
+                        <li><a href = "index.html#campus"> Campus </a></li>
+                        <li><a href = "events.html"> Events </a></li>
+                        <li><a href = "index.html#about"> About </a></li>
+                        <li><a href = "index.html#contact" class = "cta-button"> Contact </a></li>
+                        <li><a href = "user.html" class = "active"> Login/Sign Up </a></li>
+                        <button id = "darkModeToggle" class = "theme-toggle">
+                            🌙
+                        </button>
+                    </ul>
+                </div>
+            </nav>
+
+            <section class = "user-section">
+                <div class = "container">
+                    <div class = "auth-container">
+                        <div class = "auth-tabs">
+                            <button class = "auth-tab active" data-tab = "login"> Login </button>
+                            <button class = "auth-tab" data-tab = "signup"> Sign Up </button>
+                        </div>
+
+                        <div class = "auth-form active" id = "loginForm">
+                            <h2> Welcome Back! </h2>
+                            <p class = "auth-subtitle"> Login to access your account </p>
+                            <form id = "login-form">
+                                <div class = "form-group">
+                                    <label for = "login-email"> Email </label>
+                                    <input type = "email" id = "login-email" required>
+                                </div>
+                                <div class = "form-group">
+                                    <label for = "login-password"> Password </label>
+                                    <div class = "password-input">
+                                        <input type = "password" id = "login-password" required>
+                                        <button type = "button" class = "toggle-password">
+                                            <i class = "far fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button type = "submit" class = "primary-button"> Login </button>
+                            </form>
+                        </div>
+
+                        <div class = "auth-form" id = "signupForm">
+                            <h2> Create Account </h2>
+                            <p class = "auth-subtitle"> Join our community today </p>
+                            <form id = "signup-form">
+                                <div class = "form-group">
+                                    <label for = "signup-name"> Full Name </label>
+                                    <input type = "text" id = "signup-name" required>
+                                </div>
+                                <div class = "form-group">
+                                    <label for = "signup-email"> Email </label>
+                                    <input type = "email" id = "signup-email" required>
+                                </div>
+                                <div class = "form-group">
+                                    <label for = "signup-role"> Role </label>
+                                    <select id = "signup-role" required>
+                                        <option value = "student"> Student </option>
+                                        <option value = "organizer"> Organizer </option>
+                                        <option value = "admin"> Admin </option>
+                                    </select>
+                                </div>
+                                <div class = "form-group">
+                                    <label for = "signup-phone"> Phone Number </label>
+                                    <input type = "tel" id = "signup-phone" required pattern = "[0-9]{10}">
+                                </div>
+                                <div class = "form-group">
+                                    <label for = "signup-photo"> Profile Picture </label>
+                                    <div class = "file-input">
+                                        <input type = "file" id = "signup-photo" accept = "image/*">
+                                        <label for = "signup-photo" class = "file-label">
+                                            <i class = "fas fa-upload"></i>
+                                            Choose Photo
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class = "form-group">
+                                    <label for = "signup-password"> Password </label>
+                                    <div class = "password-input">
+                                        <input type = "password" id = "signup-password" required minlength = "6">
+                                        <button type = "button" class = "toggle-password">
+                                            <i class = "far fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class = "form-group">
+                                    <label for = "signup-confirm-password"> Confirm Password </label>
+                                    <div class = "password-input">
+                                        <input type = "password" id = "signup-confirm-password" required>
+                                        <button type = "button" class = "toggle-password">
+                                            <i class = "far fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button type = "submit" class = "primary-button"> Create Account </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class = "footer">
+                <div class = "container">
+                    <div class = "footer-content">
+                        <div class = "footer-info">
+                            <h3> Eventify Tricity </h3>
+                            <p> Connecting students with campus events across Tricity. Discover, participate, and make the most
+                                of your university experience. </p>
+                            <div class = "social-links">
+                                <a href = "#"><i class = "fab fa-facebook-f"></i></a>
+                                <a href = "#"><i class = "fab fa-twitter"></i></a>
+                                <a href = "#"><i class = "fab fa-instagram"></i></a>
+                                <a href = "#"><i class = "fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class = "footer-links">
+                            <h4> Quick Links </h4>
+                            <ul>
+                                <li><a href = "index.html#home"> Home </a></li>
+                                <li><a href = "index.html#campus"> Campus </a></li>
+                                <li><a href = "events.html"> Events </a></li>
+                                <li><a href = "index.html#about"> About Us </a></li>
+                                <li><a href = "index.html#contact"> Contact </a></li>
+                            </ul>
+                        </div>
+
+                        <div class = "footer-links">
+                            <h4> Universities </h4>
+                            <ul>
+                                <li><a href = "#"> Panjab University </a></li>
+                                <li><a href = "#"> Chitkara University </a></li>
+                                <li><a href = "#"> PEC University </a></li>
+                                <li><a href = "#"> Thapar University </a></li>
+                            </ul>
+                        </div>
+
+                        <div class = "newsletter">
+                            <h4> Newsletter </h4>
+                            <p> Subscribe to stay updated with the latest campus events and opportunities. </p>
+                            <form class = "newsletter-form" id = "newsletter-form">
+                                <input type = "email" placeholder = "Enter your email" required>
+                                <button type = "submit"> Subscribe </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class = "footer-bottom">
+                        <p> &copy; 2024 Eventify Tricity. All rights reserved. </p>
+                    </div>
+                </div>
+            </footer>
+
+            <div id = "toast" class = "toast"></div>
+
+            <script src = "https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+            <script src = "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+            <script src = "https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+            <script src = "https://www.gstatic.com/firebasejs/10.8.0/firebase-storage-compat.js"></script>
+            <script src = "../src/scripts/user.js"></script>
+            <script src = "../src/scripts/script.js"></script>
+        </body>
+    </html>

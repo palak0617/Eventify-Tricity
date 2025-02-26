@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+    <html lang = "en">
+        <head>
+            <meta charset = "UTF-8">
+            <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+            <title> Event Registration - Eventify Tricity </title>
+            <link rel = "stylesheet" href = "../src/styles/style.css">
+            <link rel = "stylesheet" href = "../src/styles/registration.css">
+            <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        </head>
+
+        <body class = "light-mode">
+            <nav class = "navbar">
+                <div class = "container">
+                    <a href = "/" class = "logo">
+                        <img src = "../src/assets/images/logo.jpg" alt = "Eventify Tricity">
+                    </a>
+                    <div class = "nav-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class = "nav-links">
+                        <li><a href = "#home" class = "active"> Home </a></li>
+                        <li><a href = "campus.html"> Campus </a></li>
+                        <li><a href = "events.html"> Events </a></li>
+                        <li><a href = "feedback.html"> Feedback </a></li>
+                        <li><a href = "user.html" class = "cta-button"> Uaccount </a></li>
+                        <button id = "darkModeToggle" class = "theme-toggle">🌙</button>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class = "container">
+                <form id = "registrationForm" class = "registration-form">
+                    <h2> Event Registration </h2>
+
+                    <div class = "form-group">
+                        <label for = "fullName"> Full Name* </label>
+                        <input type = "text" id = "fullName" required>
+                    </div>
+
+                    <div class = "form-group">
+                        <label for = "email"> Email* </label>
+                        <input type = "email" id = "email" required>
+                    </div>
+
+                    <div class = "form-group">
+                        <label for = "phone"> Phone Number* </label>
+                        <input type = "tel" id = "phone" pattern = "[0-9]{10}" required>
+                    </div>
+
+                    <div class = "form-group">
+                        <label for = "university"> University* </label>
+                        <select id = "university" required>
+                            <option value = ""> Select University </option>
+                            <option value = "Panjab University"> Panjab University </option>
+                            <option value = "Chitkara University"> Chitkara University </option>
+                            <option value = "PEC University"> PEC University </option>
+                            <option value = "Thapar University"> Thapar University </option>
+                            <option value = "other"> Other </option>
+                        </select>
+                    </div>
+
+                    <div id = "otherUniversityGroup" class = "form-group" style = "display: none;">
+                        <label for = "otherUniversity"> Specify University* </label>
+                        <input type = "text" id = "otherUniversity">
+                    </div>
+
+                    <div class = "form-group">
+                        <label>
+                            <input type = "checkbox" id = "terms" required>
+                            I agree to the terms and conditions*
+                        </label>
+                    </div>
+
+                    <button type = "submit" class = "submit-button"> Register </button>
+                </form>
+                <div id = "successModal" class = "modal">
+                    <div class = "modal-content">
+                        <h2> Registration Successful! </h2>
+                        <p> Thank you for registering. Here's your QR code: </p>
+                        <div class = "qr-container">
+                            <img id = "qrCode" src = "../src/assets/images/userqr.jpg" alt = "QR Code">
+                        </div>
+                        <p> Please save this QR code for the event. </p>
+                        <button onclick = "closeModal()" class = "close-button"> Close </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id = "toast" class = "toast"></div>
+
+            <script src = "https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+            <script src = "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+            <script src = "https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+            <script src = "../src/scripts/registration.js"></script>
+        </body>
+    </html>

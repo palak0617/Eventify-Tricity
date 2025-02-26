@@ -1,0 +1,37 @@
+eventify-tricity/
+│── client/                     # Frontend (currently HTML, CSS, JS, later React)
+│   ├── public/                 # Static files (HTML, favicon, etc.)
+│   │   ├── index.html
+│   │   ├── dashboard.html
+│   │   ├── events.html
+│   │   ├── registration.html
+│   │   ├── cultural-events.html
+│   │   ├── technical-events.html
+│   │   ├── ... (other HTML files)
+│   ├── src/                    # React source files (future)
+│   │   ├── components/         # Reusable components (future)
+│   │   ├── pages/              # Page components (future)
+│   │   ├── styles/             # CSS files
+│   │   │   ├── style.css
+│   │   │   ├── registration.css
+│   │   │   ├── user.css
+│   │   ├── assets/             # Images & media
+│   │   │   ├── images/         # All images go here
+│   │   ├── scripts/            # JavaScript files
+│   │   │   ├── dashboard.js
+│   │   │   ├── events.js
+│   │   │   ├── dark.js
+│   │   │   ├── script.js
+│   │   │   ├── user.js
+│   │   ├── App.js              # Main React component (future)
+│   │   ├── index.js            # React entry point (future)
+│   ├── package.json            # React dependencies (future)
+│── server/                     # Backend (Node.js + Express)
+│   ├── models/                 # Mongoose schemas (database structure)
+│   ├── routes/                 # Express routes
+│   ├── controllers/            # Business logic
+│   ├── config/                 # Configuration files
+│   │   ├── db.js               # MongoDB connection setup
+│   ├── server.js               # Express entry point
+│   ├── package.json            # Backend dependencies
+│── README.md                   # Project documentation
