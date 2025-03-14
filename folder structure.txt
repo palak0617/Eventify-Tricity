@@ -35,3 +35,8 @@ eventify-tricity/
 │   ├── server.js               # Express entry point
 │   ├── package.json            # Backend dependencies
 │── README.md                   # Project documentation
+
+
+bcryptjs → Hashes passwords securely.
+jsonwebtoken → Generates JWT tokens for authentication.
+express-validator → Validates user inputs.
