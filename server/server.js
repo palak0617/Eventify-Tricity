@@ -1,14 +1,23 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
+const registrationRoutes = require("./routes/registrationRoutes");
 
 const app = express();
 
 connectDB();
 
+app.use(cors({
+    origin: "*",
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type,Authorization"
+}));
+
 app.use(express.json());
 app.use("/api/users", userRoutes);
+app.use("/api/registrations", registrationRoutes);
 
 app.get("/", (req, res) => {
     res.send("API is running...");

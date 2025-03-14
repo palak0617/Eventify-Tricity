@@ -4,8 +4,8 @@
             <meta charset = "UTF-8">
             <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
             <title> Event Registration - Eventify Tricity </title>
-            <link rel = "stylesheet" href = "src/styles/style.css">
-            <link rel = "stylesheet" href = "src/styles/registration.css">
+            <link rel = "stylesheet" href = "../src/styles/style.css">
+            <link rel = "stylesheet" href = "../src/styles/registration.css">
             <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         </head>
 
@@ -13,7 +13,7 @@
             <nav class = "navbar">
                 <div class = "container">
                     <a href = "/" class = "logo">
-                        <img src = "src/assets/images/logo.jpg" alt = "Eventify Tricity">
+                        <img src = "../src/assets/images/logo.jpg" alt = "Eventify Tricity">
                     </a>
                     <div class = "nav-toggle">
                         <span></span>
@@ -81,7 +81,7 @@
                         <h2> Registration Successful! </h2>
                         <p> Thank you for registering. Here's your QR code: </p>
                         <div class = "qr-container">
-                            <img id = "qrCode" src = "src/assets/images/userqr.jpg" alt = "QR Code">
+                            <img id = "qrCode" src = "../src/assets/images/userqr.jpg" alt = "QR Code">
                         </div>
                         <p> Please save this QR code for the event. </p>
                         <button onclick = "closeModal()" class = "close-button"> Close </button>
@@ -94,6 +94,6 @@
             <script src = "https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
             <script src = "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
             <script src = "https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
-            <script src = "src/scripts/registration.js"></script>
+            <script src = "../src/scripts/registration.js"></script>
         </body>
     </html>

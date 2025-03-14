@@ -32,27 +32,44 @@ function closeModal() {
     successModal.className = 'modal';
 }
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    const token = localStorage.getItem('token'); 
+    if (!token) {
+        showToast('You must be logged in to register!', 'error');
+        return;
+    }
+
     const formData = {
-        fullName: document.getElementById('fullName').value,
+        event: "65d8e7d9f1d5c03f707d2f5b",
+        name: document.getElementById('fullName').value,
         email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        university: universitySelect.value === 'other' ? otherUniversityInput.value : universitySelect.value,
-        registrationDate: new Date().toISOString()
+        phone: document.getElementById('phone').value
     };
 
     try {
-        const registrations = JSON.parse(localStorage.getItem('registrations') || '[]');
-        registrations.push(formData);
-        localStorage.setItem('registrations', JSON.stringify(registrations));
-        
-        showToast('Registration successful!');
-        showSuccessModal();
-        form.reset();
+        const response = await fetch("http://localhost:5000/api/registrations", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            document.getElementById("qrCode").src = data.qrCodeUrl;
+            showToast('Registration successful!');
+            showSuccessModal();
+            form.reset();
+        } else {
+            showToast(data.message || 'Registration failed!', 'error');
+        }
     } catch (error) {
-        showToast('Error saving registration. Please try again.', 'error');
+        showToast('Error connecting to server. Please try again.', 'error');
         console.error(error);
     }
 });
