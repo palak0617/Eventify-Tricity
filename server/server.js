@@ -16,7 +16,7 @@ app.use(cors({
 }));
 
 app.use(express.json());
-app.use("/api/users", userRoutes);
+app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/registrations", registrationRoutes);
 
 app.get("/", (req, res) => {
@@ -25,3 +25,8 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server listening on http://localhost:${PORT}`));
+
+const eventRoutes = require("./routes/eventRoutes");
+
+app.use("/api/events", eventRoutes);
+
